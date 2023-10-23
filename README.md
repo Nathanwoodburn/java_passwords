@@ -9,3 +9,14 @@
 
 https://crackstation.net/ - Decrypt Hashes
 
+
+
+Time to crack hashes:
+6 chars:  
+plain/salted: ~1 second  
+peppered: ~40 seconds
+
+
+12 chars:  
+plain/salted: ~5 minutes  
+peppered: ~52 times longer than salted ~4 hours
