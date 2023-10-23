@@ -20,14 +20,14 @@ public class saltedHash {
             String salted = input + salt;
             System.out.println("Hashed as:");
             String hashed = hash.hashstring(salted);
-            String stored = hashed + ":"+salt;  
+            String stored = hashed + "$"+salt;
             System.out.println(stored);
 
             System.out.println("Enter a string to check: ");
             String check = reader.readLine();
 
             // Split stored by the colon
-            String[] parts = stored.split(":");
+            String[] parts = stored.split("\\$");
             // Salt the checked
             String saltedCheck = check + parts[1];
             // Hash the salted checked
@@ -46,7 +46,7 @@ public class saltedHash {
 
     }
 
-    private static byte[] getSalt() throws NoSuchAlgorithmException {
+    public static byte[] getSalt() throws NoSuchAlgorithmException {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
         random.nextBytes(salt);
