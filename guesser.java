@@ -1,3 +1,4 @@
+import java.io.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Random;
@@ -19,16 +20,23 @@ public class guesser {
 
         boolean match = false;
         int check=0;
-        while (!match) {
-            String guess = getRandomPassword(check);
-            check++;
-            String hashedGuess = hash.hashstring(guess);
-            if (hashedGuess.equals(hashed)) {
-                match = true;
-                System.out.println("Match!");
-                System.out.println("Password is: " + guess);
+        // Check hash table
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader("hashtable.txt"));
+            String line;
+            int lineNumber = 0;
+
+            while ((line = reader.readLine()) != null) {
+                lineNumber++;
+                if (line.contains(hashed)) {
+                    System.out.println("Match!");
+                    System.out.println("Password is: " + line.split("\\$")[0]);
+                }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
 
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
@@ -99,7 +107,7 @@ public class guesser {
 
     }
 
-    private static String getRandomPassword(int value) {
+    public static String getRandomPassword(int value) {
         // Define the characters that can be used in the random string
         String characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
