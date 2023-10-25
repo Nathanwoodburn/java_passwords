@@ -18,7 +18,7 @@ public class saltedHash {
             }
 
             String salted = input + salt;
-            System.out.println("Hashed as:");
+            System.out.println("Stored as:");
             String hashed = hash.hashstring(salted);
             String stored = hashed + "$"+salt;
             System.out.println(stored);

@@ -9,16 +9,15 @@ public class pepperedHash {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter a string to hash and salt: ");
+        System.out.println("Enter a string to hash and pepper: ");
         String input = reader.readLine();
 
         try {
             String pepper = getPepper();
             System.out.println("Pepper is: " + pepper);
-            // Remove starting 0s
 
             String peppered = input + getPepper();
-            System.out.println("Hashed as:");
+            System.out.println("Stored as:");
             String hashed = hash.hashstring(peppered);
             System.out.println(hashed);
 

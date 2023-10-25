@@ -12,7 +12,6 @@ public class guesser {
 
         System.out.println("Hashed password");
         String hashed = hash.hashstring(randomPassword);
-        System.out.println(hashed);
 
         System.out.println("Guessing...");
         long startTime = System.nanoTime();
@@ -34,7 +33,7 @@ public class guesser {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
 
 

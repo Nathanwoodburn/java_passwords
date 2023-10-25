@@ -7,17 +7,23 @@ import java.security.NoSuchAlgorithmException;
 
 
 public class hash {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter a string to hash: ");
         String input = reader.readLine();
+        String stored = hashstring(input);
 
-        System.out.println("Hashed as:");
-        try {
-            System.out.println(hashstring(input));
-        } catch (NoSuchAlgorithmException e) {
-            System.out.println(e.toString());
+        System.out.println("Stored as:");
+        System.out.println(stored);
+
+        System.out.println("Check password:");
+        String check = reader.readLine();
+        if (hashstring(check).equals(stored)) {
+            System.out.println("Match!");
+        } else {
+            System.out.println("No match!");
         }
+
     }
 
     public static String hashstring(String input) throws NoSuchAlgorithmException

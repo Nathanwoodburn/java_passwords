@@ -17,8 +17,6 @@ public class hashTable {
         }
 
         // Write to the file
-
-
         for (int i = 0; i < 1000000; i++) {
             String randomPassword = guesser.getRandomPassword(i);
             String hashed = hash.hashstring(randomPassword);
