@@ -1,5 +1,7 @@
 # Java Password storage solutions
 
+[wiki.md](Read the wiki artical here)
+
 1. [Hashing](hash.java)
 2. [Salted Hashing](saltedHash.java)
 3. [Peppered Hashing](pepperedHash.java)
