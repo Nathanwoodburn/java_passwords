@@ -1,6 +1,6 @@
 # Java Password storage solutions
 
-[wiki.md](Read the wiki artical here)
+[Read the wiki article here](wiki.md)
 
 1. [Hashing](hash.java)
 2. [Salted Hashing](saltedHash.java)
